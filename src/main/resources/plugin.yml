@@ -1,0 +1,31 @@
+main: me.redraskal.customarrowtrails.CustomArrowTrails
+name: ${project.name}
+author: redraskal
+version: ${project.version}
+description: "The one and only premium Arrow Trail customization plugin on Spigot."
+website: "https://github.com/redraskal/CustomArrowTrails"
+
+commands:
+  customarrowtrails:
+    description: "The only command for customizing arrow trails."
+    aliases: [customarrowtrail, arrowtrail, atrail]
+
+permissions:
+  arrowtrail.*:
+    children:
+      arrowtrail.effect.*: true
+      arrowtrail.force: true
+      arrowtrail.disable: true
+      arrowtrail.list: true
+      arrowtrail.reload: true
+    default: op
+  arrowtrail.effect.*:
+    default: op
+  arrowtrail.force:
+    default: op
+  arrowtrail.disable:
+    default: true
+  arrowtrail.list:
+    default: true
+  arrowtrail.reload:
+    default: op
