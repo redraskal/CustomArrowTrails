@@ -4,6 +4,7 @@ import lombok.Getter;
 import me.redraskal.customarrowtrails.CustomArrowTrails;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
+import org.bukkit.Particle;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
@@ -36,9 +37,9 @@ public class ArrowTrailManager {
      * @param uuid
      * @return
      */
-    public Effect getArrowTrail(UUID uuid) {
+    public Particle getArrowTrail(UUID uuid) {
         if(config.contains(uuid.toString())) {
-            return Effect.valueOf(config.getString(uuid.toString()).toUpperCase());
+            return Particle.valueOf(config.getString(uuid.toString()).toUpperCase());
         } else {
             return null;
         }
@@ -50,7 +51,7 @@ public class ArrowTrailManager {
      * @param effect
      * @throws IOException
      */
-    public void setArrowTrail(UUID uuid, Effect effect) throws IOException {
+    public void setArrowTrail(UUID uuid, Particle effect) throws IOException {
         if(effect == null) {
             config.set(uuid.toString(), null);
         } else {
@@ -66,7 +67,7 @@ public class ArrowTrailManager {
      * @param effect
      * @return
      */
-    public boolean hasPermission(UUID uuid, Effect effect) {
+    public boolean hasPermission(UUID uuid, Particle effect) {
         Player player = Bukkit.getPlayer(uuid);
         if(player == null) return false;
         return (player.hasPermission("arrowtrail.effect.*")

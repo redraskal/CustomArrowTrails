@@ -3,6 +3,7 @@ package me.redraskal.customarrowtrails.event;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Effect;
+import org.bukkit.Particle;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
@@ -21,10 +22,10 @@ public class ArrowTrailEvent extends Event implements Cancellable {
 
     @Getter private final Player shooter;
     @Getter private final Arrow arrow;
-    @Getter @Setter private Effect effect;
+    @Getter @Setter private Particle effect;
     @Getter @Setter private boolean cancelled;
 
-    public ArrowTrailEvent(Player shooter, Arrow arrow, Effect effect) {
+    public ArrowTrailEvent(Player shooter, Arrow arrow, Particle effect) {
         this.shooter = shooter;
         this.arrow = arrow;
         this.effect = effect;

@@ -4,6 +4,7 @@ import lombok.Getter;
 import me.redraskal.customarrowtrails.CustomArrowTrails;
 import org.bukkit.Effect;
 import org.bukkit.Location;
+import org.bukkit.Particle;
 import org.bukkit.entity.Arrow;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
@@ -18,16 +19,16 @@ public class ArrowTrailRunnable extends BukkitRunnable {
 
     @Getter private final CustomArrowTrails customArrowTrails;
     @Getter private final Arrow arrow;
-    @Getter private final Effect effect;
+    @Getter private final Particle effect;
 
-    private final int range;
+    //private final int range;
     private Vector lastVelocity;
 
-    public ArrowTrailRunnable(CustomArrowTrails customArrowTrails, Arrow arrow, Effect effect) {
+    public ArrowTrailRunnable(CustomArrowTrails customArrowTrails, Arrow arrow, Particle effect) {
         this.customArrowTrails = customArrowTrails;
         this.arrow = arrow;
         this.effect = effect;
-        this.range = customArrowTrails.getConfig().getInt("arrow-trail-range");
+        //this.range = customArrowTrails.getConfig().getInt("arrow-trail-range");
         this.runTaskTimer(this.getCustomArrowTrails(), 0, customArrowTrails.getConfig().getLong("arrow-trail-tick-rate"));
     }
 
@@ -41,9 +42,10 @@ public class ArrowTrailRunnable extends BukkitRunnable {
                 location.setX(location.getX() + arrow.getVelocity().getX() * (double) offset / 4.0D);
                 location.setY(location.getY() + arrow.getVelocity().getY() * (double) offset / 4.0D);
                 location.setZ(location.getZ() + arrow.getVelocity().getZ() * (double) offset / 4.0D);
-                arrow.getWorld().spigot().playEffect(location, effect, 0, 0,
+                // Range was removed in 1.13 for particles?
+                arrow.getWorld().spawnParticle(effect, location, 1,
                         0, 0, 0,
-                        0, 1, range);
+                        0);
             }
             lastVelocity = arrow.getVelocity();
         }

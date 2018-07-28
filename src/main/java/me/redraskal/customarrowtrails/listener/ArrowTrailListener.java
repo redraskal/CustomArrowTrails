@@ -5,6 +5,7 @@ import me.redraskal.customarrowtrails.runnable.ArrowTrailRunnable;
 import me.redraskal.customarrowtrails.CustomArrowTrails;
 import me.redraskal.customarrowtrails.event.ArrowTrailEvent;
 import org.bukkit.Effect;
+import org.bukkit.Particle;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -31,7 +32,7 @@ public class ArrowTrailListener implements Listener {
         if(event.getEntity().getShooter() == null
                 || !(event.getEntity().getShooter() instanceof Player)) return;
         Player shooter = (Player) event.getEntity().getShooter();
-        Effect effect = this.getCustomArrowTrails().getArrowTrailManager().getArrowTrail(shooter.getUniqueId());
+        Particle effect = this.getCustomArrowTrails().getArrowTrailManager().getArrowTrail(shooter.getUniqueId());
         Arrow arrow = (Arrow) event.getEntity();
 
         if(this.getCustomArrowTrails().getConfig().getBoolean("remove-default-trail")) {

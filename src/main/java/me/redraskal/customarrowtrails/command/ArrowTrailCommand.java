@@ -4,6 +4,7 @@ import lombok.Getter;
 import me.redraskal.customarrowtrails.CustomArrowTrails;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
+import org.bukkit.Particle;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -60,7 +61,7 @@ public class ArrowTrailCommand implements CommandExecutor {
                     if(sender.hasPermission("arrowtrail.list")) {
                         String effects = "";
 
-                        for(Effect effect : this.getCustomArrowTrails().getArrowTrailEffects()) {
+                        for(Particle effect : this.getCustomArrowTrails().getArrowTrailEffects()) {
                             if(!effects.isEmpty()) effects+=this.getCustomArrowTrails().getMessageManager().getMessage("arrow-trail-effects.separator");
                             effects+=this.getCustomArrowTrails().getMessageManager().getMessage("arrow-trail-effects.prefix") + effect.toString().toLowerCase();
                         }
@@ -99,7 +100,7 @@ public class ArrowTrailCommand implements CommandExecutor {
                                                 this.getCustomArrowTrails().getMessageManager().getMessage("error-while-changing-message").replace("<label>", label)));
                                     }
                                 } else {
-                                    for(Effect effect : this.getCustomArrowTrails().getArrowTrailEffects()) {
+                                    for(Particle effect : this.getCustomArrowTrails().getArrowTrailEffects()) {
                                         if(effect.toString().equalsIgnoreCase(args[1])) {
                                             if(this.getCustomArrowTrails().getArrowTrailManager().hasPermission(player.getUniqueId(), effect)) {
                                                 try {
@@ -131,7 +132,7 @@ public class ArrowTrailCommand implements CommandExecutor {
                                     this.getCustomArrowTrails().getMessageManager().getMessage("no-permission-message").replace("<label>", label)));
                         }
                     } else {
-                        for(Effect effect : this.getCustomArrowTrails().getArrowTrailEffects()) {
+                        for(Particle effect : this.getCustomArrowTrails().getArrowTrailEffects()) {
                             if(effect.toString().equalsIgnoreCase(args[0])) {
                                 if(sender instanceof Player) {
                                     Player player = (Player) sender;

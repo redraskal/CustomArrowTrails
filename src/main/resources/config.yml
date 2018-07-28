@@ -11,7 +11,8 @@
 remove-default-trail: false
 
 # Sets the range (in blocks) for the arrow trail particles.
-arrow-trail-range: 32
+# EDIT: Removed in 1.13?
+#arrow-trail-range: 32
 
 # Sets the tick rate (20 ticks per second) for the arrow trail particles.
 arrow-trail-tick-rate: 1

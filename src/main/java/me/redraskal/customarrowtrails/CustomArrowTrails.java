@@ -6,10 +6,12 @@ import me.redraskal.customarrowtrails.listener.ArrowTrailListener;
 import me.redraskal.customarrowtrails.manager.ArrowTrailManager;
 import me.redraskal.customarrowtrails.manager.MessageManager;
 import org.bukkit.Effect;
+import org.bukkit.Particle;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,21 +25,21 @@ public class CustomArrowTrails extends JavaPlugin {
     @Getter private ArrowTrailManager arrowTrailManager;
     @Getter private MessageManager messageManager;
 
-    @Getter private List<Effect> arrowTrailEffects;
+    @Getter private List<Particle> arrowTrailEffects;
 
     public void onEnable() {
         this.saveDefaultConfig();
 
         this.arrowTrailEffects = new ArrayList<>();
-        for(Effect effect : Effect.values()) {
-            if(effect.getType() == Effect.Type.PARTICLE) {
-                arrowTrailEffects.add(effect);
-            }
-        }
+        Arrays.asList(Particle.values()).forEach(particle -> arrowTrailEffects.add(particle));
 
-        // These two either don't work, or just disconnect people :D
-        arrowTrailEffects.remove(Effect.ITEM_BREAK);
-        arrowTrailEffects.remove(Effect.TILE_DUST);
+        // These either don't work, or just disconnect people :D
+        arrowTrailEffects.remove(Particle.BLOCK_CRACK);
+        arrowTrailEffects.remove(Particle.BLOCK_DUST);
+        arrowTrailEffects.remove(Particle.ITEM_CRACK);
+        arrowTrailEffects.remove(Particle.LEGACY_BLOCK_CRACK);
+        arrowTrailEffects.remove(Particle.LEGACY_BLOCK_DUST);
+        arrowTrailEffects.remove(Particle.LEGACY_FALLING_DUST);
 
         try {
             this.arrowTrailManager = new ArrowTrailManager(this);
