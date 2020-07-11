@@ -29,7 +29,7 @@ public class ArrowTrailListener implements Listener {
     public void onArrowLaunch(ProjectileLaunchEvent event) {
         if(!(event.getEntity() instanceof Arrow)) return;
         if(event.getEntity().getShooter() == null
-                || !(event.getEntity().getShooter() instanceof Player)) return;
+                || !(event.getEntity().getShooter() instanceof Player)) return; // bug in paper will break this, fix is updating paper
         Player shooter = (Player) event.getEntity().getShooter();
         Particle effect = this.getCustomArrowTrails().getArrowTrailManager().getArrowTrail(shooter.getUniqueId());
         Arrow arrow = (Arrow) event.getEntity();
