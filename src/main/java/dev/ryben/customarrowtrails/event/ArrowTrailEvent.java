@@ -1,4 +1,4 @@
-package me.redraskal.customarrowtrails.event;
+package dev.ryben.customarrowtrails.event;
 
 import lombok.Getter;
 import lombok.Setter;

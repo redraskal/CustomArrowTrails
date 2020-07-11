@@ -1,4 +1,4 @@
-main: me.redraskal.customarrowtrails.CustomArrowTrails
+main: dev.ryben.customarrowtrails.CustomArrowTrails
 name: ${project.name}
 author: redraskal
 version: ${project.version}

@@ -1,7 +1,7 @@
-package me.redraskal.customarrowtrails.manager;
+package dev.ryben.customarrowtrails.manager;
 
 import lombok.Getter;
-import me.redraskal.customarrowtrails.CustomArrowTrails;
+import dev.ryben.customarrowtrails.CustomArrowTrails;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 

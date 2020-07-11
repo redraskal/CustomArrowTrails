@@ -1,10 +1,10 @@
-package me.redraskal.customarrowtrails;
+package dev.ryben.customarrowtrails;
 
 import lombok.Getter;
-import me.redraskal.customarrowtrails.command.ArrowTrailCommand;
-import me.redraskal.customarrowtrails.listener.ArrowTrailListener;
-import me.redraskal.customarrowtrails.manager.ArrowTrailManager;
-import me.redraskal.customarrowtrails.manager.MessageManager;
+import dev.ryben.customarrowtrails.command.ArrowTrailCommand;
+import dev.ryben.customarrowtrails.listener.ArrowTrailListener;
+import dev.ryben.customarrowtrails.manager.ArrowTrailManager;
+import dev.ryben.customarrowtrails.manager.MessageManager;
 import org.bukkit.Particle;
 import org.bukkit.plugin.java.JavaPlugin;
 

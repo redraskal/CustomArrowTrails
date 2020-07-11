@@ -1,7 +1,7 @@
-package me.redraskal.customarrowtrails.runnable;
+package dev.ryben.customarrowtrails.runnable;
 
 import lombok.Getter;
-import me.redraskal.customarrowtrails.CustomArrowTrails;
+import dev.ryben.customarrowtrails.CustomArrowTrails;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.entity.Arrow;

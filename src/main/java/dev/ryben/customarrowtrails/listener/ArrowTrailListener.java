@@ -1,9 +1,9 @@
-package me.redraskal.customarrowtrails.listener;
+package dev.ryben.customarrowtrails.listener;
 
 import lombok.Getter;
-import me.redraskal.customarrowtrails.runnable.ArrowTrailRunnable;
-import me.redraskal.customarrowtrails.CustomArrowTrails;
-import me.redraskal.customarrowtrails.event.ArrowTrailEvent;
+import dev.ryben.customarrowtrails.runnable.ArrowTrailRunnable;
+import dev.ryben.customarrowtrails.CustomArrowTrails;
+import dev.ryben.customarrowtrails.event.ArrowTrailEvent;
 import org.bukkit.Particle;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
