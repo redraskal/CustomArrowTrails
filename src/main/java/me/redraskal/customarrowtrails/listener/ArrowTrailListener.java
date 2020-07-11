@@ -4,7 +4,6 @@ import lombok.Getter;
 import me.redraskal.customarrowtrails.runnable.ArrowTrailRunnable;
 import me.redraskal.customarrowtrails.CustomArrowTrails;
 import me.redraskal.customarrowtrails.event.ArrowTrailEvent;
-import org.bukkit.Effect;
 import org.bukkit.Particle;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;

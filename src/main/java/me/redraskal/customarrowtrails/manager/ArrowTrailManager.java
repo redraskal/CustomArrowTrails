@@ -3,7 +3,6 @@ package me.redraskal.customarrowtrails.manager;
 import lombok.Getter;
 import me.redraskal.customarrowtrails.CustomArrowTrails;
 import org.bukkit.Bukkit;
-import org.bukkit.Effect;
 import org.bukkit.Particle;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;

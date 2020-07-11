@@ -2,8 +2,9 @@ main: me.redraskal.customarrowtrails.CustomArrowTrails
 name: ${project.name}
 author: redraskal
 version: ${project.version}
+api-version: 1.16
 description: "The one and only premium Arrow Trail customization plugin on Spigot."
-website: "https://github.com/redraskal/CustomArrowTrails"
+website: "https://github.com/JediMasterSoda/CustomArrowTrails"
 
 commands:
   customarrowtrails:

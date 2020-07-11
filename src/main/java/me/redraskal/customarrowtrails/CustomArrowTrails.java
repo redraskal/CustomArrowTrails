@@ -5,7 +5,6 @@ import me.redraskal.customarrowtrails.command.ArrowTrailCommand;
 import me.redraskal.customarrowtrails.listener.ArrowTrailListener;
 import me.redraskal.customarrowtrails.manager.ArrowTrailManager;
 import me.redraskal.customarrowtrails.manager.MessageManager;
-import org.bukkit.Effect;
 import org.bukkit.Particle;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -31,15 +30,22 @@ public class CustomArrowTrails extends JavaPlugin {
         this.saveDefaultConfig();
 
         this.arrowTrailEffects = new ArrayList<>();
-        Arrays.asList(Particle.values()).forEach(particle -> arrowTrailEffects.add(particle));
 
         // These either don't work, or just disconnect people :D
-        arrowTrailEffects.remove(Particle.BLOCK_CRACK);
-        arrowTrailEffects.remove(Particle.BLOCK_DUST);
-        arrowTrailEffects.remove(Particle.ITEM_CRACK);
-        arrowTrailEffects.remove(Particle.LEGACY_BLOCK_CRACK);
-        arrowTrailEffects.remove(Particle.LEGACY_BLOCK_DUST);
-        arrowTrailEffects.remove(Particle.LEGACY_FALLING_DUST);
+        List<String> bannedParticles = Arrays.asList(new String[]{
+            "BLOCK_CRACK",
+            "BLOCK_DUST",
+            "ITEM_CRACK",
+            "LEGACY_BLOCK_CRACK",
+            "LEGACY_BLOCK_DUST",
+            "LEGACY_FALLING_DUST"
+        });
+        
+        Arrays.asList(Particle.values()).forEach(particle -> {
+            if(!bannedParticles.contains(particle.toString())) {
+                arrowTrailEffects.add(particle);
+            }
+        });
 
         try {
             this.arrowTrailManager = new ArrowTrailManager(this);

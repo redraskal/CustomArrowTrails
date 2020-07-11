@@ -2,7 +2,6 @@ package me.redraskal.customarrowtrails.event;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.bukkit.Effect;
 import org.bukkit.Particle;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
