@@ -5,4 +5,4 @@ The one and only premium Arrow Trail customization plugin on Spigot.
 NA
 
 ### Known Issues:
-NA
+1.12 & below is not supported anymore. (WON'T FIX)
